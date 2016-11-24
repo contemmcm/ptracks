@@ -11,4 +11,4 @@ HOST=`hostname`
 
 # executa a aplicação
 PYTHONPATH="ptracks/"
-/usr/bin/env python -OO -m ptracks.newton "$@" 2> ./newton.$HOST.log
+/usr/bin/env python -OO -m ptracks.newton "$@" > ./newton.$HOST.log 2>&1
