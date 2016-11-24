@@ -41,11 +41,11 @@ import threading
 import time
 
 # from ...model 
-import model.glb_data as gdata
-import model.glb_defs as gdefs
+import ptracks.model.glb_data as gdata
+import ptracks.model.glb_defs as gdefs
 
 # from ...control.events 
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

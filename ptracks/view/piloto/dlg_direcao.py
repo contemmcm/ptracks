@@ -39,7 +39,7 @@ import os
 from PyQt4 import QtCore, QtGui
 
 # view
-import view.piloto.dlg_direcao_ui as dlg
+import ptracks.view.piloto.dlg_direcao_ui as dlg
 
 # < module data >----------------------------------------------------------------------------------
 

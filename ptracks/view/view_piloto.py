@@ -41,11 +41,11 @@ import sys
 from PyQt4 import QtCore, QtGui
 
 # view
-import view.view_manager as view
-import view.piloto.wnd_main_piloto as wmain
+import ptracks.view.view_manager as view
+import ptracks.view.piloto.wnd_main_piloto as wmain
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

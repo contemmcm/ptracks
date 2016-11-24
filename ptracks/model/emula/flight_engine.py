@@ -38,20 +38,20 @@ import threading
 import time
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # model
-import model.glb_data as gdata
-import model.glb_defs as gdefs
+import ptracks.model.glb_data as gdata
+import ptracks.model.glb_defs as gdefs
 
-import model.emula.cine.abort_prc as abnd
-import model.emula.cine.cine_data as cindata
+import ptracks.model.emula.cine.abort_prc as abnd
+import ptracks.model.emula.cine.cine_data as cindata
 # import model.emula.cine.cine_solo as cinsolo
-import model.emula.cine.cine_voo as cinvoo
-import model.emula.cine.sentido_curva as scrv
+import ptracks.model.emula.cine.cine_voo as cinvoo
+import ptracks.model.emula.cine.sentido_curva as scrv
 
-import model.newton.defs_newton as ldefs
-import model.piloto.comando_piloto as cmdpil
+import ptracks.model.newton.defs_newton as ldefs
+import ptracks.model.piloto.comando_piloto as cmdpil
 
 # < module data >----------------------------------------------------------------------------------
 

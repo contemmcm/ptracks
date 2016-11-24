@@ -37,21 +37,21 @@ import logging
 import os.path
 
 # libs
-import libs.coords.coord_sys as coords
+import ptracks.libs.coords.coord_sys as coords
 
 # model
-import model.model_manager as model
+import ptracks.model.model_manager as model
 
-import model.emula.emula_newton as emula
+import ptracks.model.emula.emula_newton as emula
 
 #import model.items.aer_data as aerdata
-import model.items.exe_data as exedata
+import ptracks.model.items.exe_data as exedata
 #import model.items.fix_data as fixdata
-import model.items.prf_data as prfdata
-import model.items.trf_data as trfdata
+import ptracks.model.items.prf_data as prfdata
+import ptracks.model.items.trf_data as trfdata
 
-import model.newton.airspace_newton as airs
-import model.newton.defs_newton as ldefs
+import ptracks.model.newton.airspace_newton as airs
+import ptracks.model.newton.defs_newton as ldefs
 
 # < module data >----------------------------------------------------------------------------------
 

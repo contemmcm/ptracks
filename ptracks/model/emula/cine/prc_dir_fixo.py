@@ -37,12 +37,12 @@ import logging
 import math
 
 # model
-import model.newton.defs_newton as ldefs
+import ptracks.model.newton.defs_newton as ldefs
 
-import model.emula.cine.abort_prc as abnd
-import model.emula.cine.calc_razao_curva as razc
-import model.emula.cine.calc_proa_demanda as cpd
-import model.emula.cine.sentido_curva as scrv
+import ptracks.model.emula.cine.abort_prc as abnd
+import ptracks.model.emula.cine.calc_razao_curva as razc
+import ptracks.model.emula.cine.calc_proa_demanda as cpd
+import ptracks.model.emula.cine.sentido_curva as scrv
 
 # < module data >----------------------------------------------------------------------------------
 

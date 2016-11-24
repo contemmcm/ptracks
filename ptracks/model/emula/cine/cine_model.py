@@ -37,14 +37,14 @@ import logging
 import math
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # model
-import model.glb_defs as gdefs
-import model.newton.defs_newton as ldefs
+import ptracks.model.glb_defs as gdefs
+import ptracks.model.newton.defs_newton as ldefs
 
 # import model.items.esp_trk as esptrk
-import model.items.trj_new as trjnew
+import ptracks.model.items.trj_new as trjnew
 
 # < module data >----------------------------------------------------------------------------------
 

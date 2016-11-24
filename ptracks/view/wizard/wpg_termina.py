@@ -40,8 +40,8 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # wizard
-import view.wizard.wizard_page_model as wpm
-import view.wizard.wpg_termina_ui as wterm_ui
+import ptracks.view.wizard.wizard_page_model as wpm
+import ptracks.view.wizard.wpg_termina_ui as wterm_ui
 
 # < module data >----------------------------------------------------------------------------------
 

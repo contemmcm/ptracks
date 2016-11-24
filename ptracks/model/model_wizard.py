@@ -38,12 +38,12 @@ import os
 import sys
 
 # model
-import model.model_manager as model
+import ptracks.model.model_manager as model
 
-import model.items.exe_data as exedata
+import ptracks.model.items.exe_data as exedata
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

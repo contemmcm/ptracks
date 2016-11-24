@@ -37,14 +37,14 @@ import logging
 import sys
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # model
-import model.items.trf_model as model
-import model.newton.defs_newton as ldefs
+import ptracks.model.items.trf_model as model
+import ptracks.model.newton.defs_newton as ldefs
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

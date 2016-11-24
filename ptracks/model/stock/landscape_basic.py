@@ -41,8 +41,8 @@ __date__ = "2015/11"
 import os
 
 # model
-import model.items.aer_data as aerdata
-import model.items.fix_data as fixdata
+import ptracks.model.items.aer_data as aerdata
+import ptracks.model.items.fix_data as fixdata
 
 # < module data >----------------------------------------------------------------------------------
 

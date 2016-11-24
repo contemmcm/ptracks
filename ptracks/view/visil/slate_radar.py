@@ -43,17 +43,17 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # libs
-import libs.coords.pos_lat_lng as pll
-import libs.coords.pos_xy as pxy
+import ptracks.libs.coords.pos_lat_lng as pll
+import ptracks.libs.coords.pos_xy as pxy
 
 # model
-import model.glb_data as gdata
-import model.newton.defs_newton as ldefs
-import model.tMath as tMath
+import ptracks.model.glb_data as gdata
+import ptracks.model.newton.defs_newton as ldefs
+import ptracks.model.tMath as tMath
 
 # view
-import view.visil.viewport as vwp
-import view.visil.paint_engine as peng
+import ptracks.view.visil.viewport as vwp
+import ptracks.view.visil.paint_engine as peng
 
 # < module data >----------------------------------------------------------------------------------
 

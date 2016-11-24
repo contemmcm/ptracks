@@ -37,13 +37,13 @@ import logging
 import math
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # model
-import model.glb_data as gdata
-import model.newton.defs_newton as ldefs
+import ptracks.model.glb_data as gdata
+import ptracks.model.newton.defs_newton as ldefs
 
-import model.emula.cine.calc_proa_demanda as cpd
+import ptracks.model.emula.cine.calc_proa_demanda as cpd
 
 # < module data >----------------------------------------------------------------------------------
 

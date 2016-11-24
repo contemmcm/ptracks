@@ -38,14 +38,14 @@ import sys
 from PyQt4 import QtCore, QtGui
 
 # model
-import model.items.fix_data as dctFix
+import ptracks.model.items.fix_data as dctFix
 
 # view
-import view.dbedit.dlg_fix_edit_new as dlgFixEditNEW
-import view.dbedit.dlg_fix_data_new_ui as CDlgFixDataNEW_ui
+import ptracks.view.dbedit.dlg_fix_edit_new as dlgFixEditNEW
+import ptracks.view.dbedit.dlg_fix_data_new_ui as CDlgFixDataNEW_ui
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

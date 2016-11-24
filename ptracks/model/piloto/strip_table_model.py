@@ -45,12 +45,12 @@ import logging
 from PyQt4 import QtCore
 
 # libs
-import libs.coords.coord_conv as cconv
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_conv as cconv
+import ptracks.libs.coords.coord_defs as cdefs
 
 #import model.glb_data as gdata
-import model.piloto.defs_piloto as ldefs
-import model.piloto.aircraft_piloto as anvmdl
+import ptracks.model.piloto.defs_piloto as ldefs
+import ptracks.model.piloto.aircraft_piloto as anvmdl
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -37,11 +37,11 @@ import logging
 import sys
 
 # model
-import model.items.prc_model as model
-import model.newton.defs_newton as ldefs
+import ptracks.model.items.prc_model as model
+import ptracks.model.newton.defs_newton as ldefs
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

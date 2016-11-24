@@ -43,26 +43,26 @@ from mpi4py import MPI
 # import mpi4py
 
 # from ..model 
-import model.glb_data as gdata
-import model.glb_defs as gdefs
+import ptracks.model.glb_data as gdata
+import ptracks.model.glb_defs as gdefs
 
-import model.model_newton as model
+import ptracks.model.model_newton as model
 
 # from ..view 
-import view.view_newton as view
+import ptracks.view.view_newton as view
 
 # from ..control 
-import control.control_basic as control
+import ptracks.control.control_basic as control
 # from ..control.config 
-import control.config.config_newton as config
+import ptracks.control.config.config_newton as config
 # from ..control.events 
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 # from ..control.network 
-import control.network.get_address as gaddr
-import control.network.net_listener as listener
-import control.network.net_sender as sender
+import ptracks.control.network.get_address as gaddr
+import ptracks.control.network.net_listener as listener
+import ptracks.control.network.net_sender as sender
 # from ..control.simula 
-import control.simula.sim_time as stime
+import ptracks.control.simula.sim_time as stime
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -40,16 +40,16 @@ import os
 from PyQt4 import QtCore, QtGui
 
 # view
-import view.dbedit.dlg_aer_data_new as dlgaer
-import view.dbedit.dlg_exe_data_new as dlgexe
-import view.dbedit.dlg_fix_data_new as dlgfix
-import view.dbedit.dlg_prf_data_new as dlgprf
+import ptracks.view.dbedit.dlg_aer_data_new as dlgaer
+import ptracks.view.dbedit.dlg_exe_data_new as dlgexe
+import ptracks.view.dbedit.dlg_fix_data_new as dlgfix
+import ptracks.view.dbedit.dlg_prf_data_new as dlgprf
 # import view.dbedit.dlg_rad_data_new as dlgrad
 
-import view.dbedit.wnd_main_dbedit_ui as wmain_ui
+import ptracks.view.dbedit.wnd_main_dbedit_ui as wmain_ui
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

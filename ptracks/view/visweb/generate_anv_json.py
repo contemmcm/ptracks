@@ -37,7 +37,7 @@ import logging
 import time
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # < module data >----------------------------------------------------------------------------------
 

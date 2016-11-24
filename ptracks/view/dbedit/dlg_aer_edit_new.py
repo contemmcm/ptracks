@@ -40,10 +40,10 @@ import os
 from PyQt4 import QtCore, QtGui
 
 # model / items
-import model.items.aer_new as model
+import ptracks.model.items.aer_new as model
 
 # view / dbedit
-import view.dbedit.dlg_aer_edit_new_ui as dlg
+import ptracks.view.dbedit.dlg_aer_edit_new_ui as dlg
 
 # < module data >----------------------------------------------------------------------------------
 

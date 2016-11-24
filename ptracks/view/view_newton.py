@@ -40,10 +40,10 @@ import time
 import SocketServer
 
 # model
-import model.glb_data as gdata
+import ptracks.model.glb_data as gdata
 
 # view
-import view.visweb.view_handler as vhnd
+import ptracks.view.visweb.view_handler as vhnd
 
 # < module data >----------------------------------------------------------------------------------
 

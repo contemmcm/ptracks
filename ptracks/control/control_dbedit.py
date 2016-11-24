@@ -33,16 +33,16 @@ __date__ = "2015/11"
 # < imports >--------------------------------------------------------------------------------------
 
 # from ..model 
-import model.model_dbedit as model
+import ptracks.model.model_dbedit as model
 
 # from ..view 
-import view.view_dbedit as view
+import ptracks.view.view_dbedit as view
 
 # from ..control 
-import control.control_manager as control
+import ptracks.control.control_manager as control
 
 # from ..control.config 
-import control.config.config_dbedit as config
+import ptracks.control.config.config_dbedit as config
 
 # < class CControlDBEdit >--------------------------------------------------------------------------
 

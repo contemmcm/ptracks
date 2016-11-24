@@ -39,11 +39,11 @@ import sys
 import time
 
 # libs
-import libs.coords.pos_lat_lng as pll
+import ptracks.libs.coords.pos_lat_lng as pll
 
 # model
-import model.tMath as tmath
-import model.stock.aircraft_basic as sanv
+import ptracks.model.tMath as tmath
+import ptracks.model.stock.aircraft_basic as sanv
 
 #import model.visadsb.auto_pilot as CAutoPilot
 #import model.visadsb.fms as CFMS

@@ -37,14 +37,14 @@ import logging
 import sys
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # model
-import model.items.aer_model as model
-import model.items.pst_new as pstnew
+import ptracks.model.items.aer_model as model
+import ptracks.model.items.pst_new as pstnew
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

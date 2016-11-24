@@ -38,14 +38,14 @@ import sys
 from PyQt4 import QtCore, QtGui
 
 # model / items
-import model.items.exe_data as dctExe
+import ptracks.model.items.exe_data as dctExe
 
 # view / dialog / Qt
-import view.dbedit.dlg_exe_edit_new as dlgEdit
-import view.dbedit.dlg_exe_data_new_ui as dlgData_ui
+import ptracks.view.dbedit.dlg_exe_edit_new as dlgEdit
+import ptracks.view.dbedit.dlg_exe_data_new_ui as dlgData_ui
 
 # control / events
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

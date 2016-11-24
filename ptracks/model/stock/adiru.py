@@ -37,7 +37,7 @@ import copy
 # import logging
 
 # libs
-import libs.coords.pos_lat_lng as pll
+import ptracks.libs.coords.pos_lat_lng as pll
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -34,7 +34,7 @@ __date__ = "2015/11"
 # < imports >--------------------------------------------------------------------------------------
 
 # from . 
-import control.events.events_model as model
+import ptracks.control.events.events_model as model
 
 # < class CFlight >--------------------------------------------------------------------------------
 

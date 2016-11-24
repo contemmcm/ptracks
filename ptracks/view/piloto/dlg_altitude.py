@@ -40,10 +40,10 @@ import os
 from PyQt4 import QtCore, QtGui
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # view
-import view.piloto.dlg_altitude_ui as dlg
+import ptracks.view.piloto.dlg_altitude_ui as dlg
 
 # < module data >----------------------------------------------------------------------------------
 

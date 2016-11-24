@@ -37,10 +37,10 @@ import os
 from PyQt4 import QtCore, QtGui
 
 # model
-import model.items.prf_new as dctPrf
+import ptracks.model.items.prf_new as dctPrf
 
 # view
-import view.dbedit.dlg_prf_edit_new_ui as dlgPrfEditNEW_ui
+import ptracks.view.dbedit.dlg_prf_edit_new_ui as dlgPrfEditNEW_ui
 
 # < variáveis globais >--------------------------------------------------------------------------
 

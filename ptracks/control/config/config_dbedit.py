@@ -37,10 +37,10 @@ __date__ = "2015/11"
 import os
 
 # from ...model 
-import model.data as data
+import ptracks.model.data as data
 
 # from ...control.config 
-import control.config.config_manager as config
+import ptracks.control.config.config_manager as config
 
 # < module data >----------------------------------------------------------------------------------
 

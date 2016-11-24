@@ -37,13 +37,13 @@ __date__ = "2015/12"
 import os
 
 # model
-import model.glb_data as gdata
+import ptracks.model.glb_data as gdata
 
 # wizard
-import view.wizard.wizard_model as model
-import view.wizard.wpg_config_canal as wcanal
-import view.wizard.wpg_config_exe as wexe
-import view.wizard.wpg_termina as wterm
+import ptracks.view.wizard.wizard_model as model
+import ptracks.view.wizard.wpg_config_canal as wcanal
+import ptracks.view.wizard.wpg_config_exe as wexe
+import ptracks.view.wizard.wpg_termina as wterm
 
 # < module data >----------------------------------------------------------------------------------
 

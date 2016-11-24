@@ -40,14 +40,14 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # libs
-import libs.coords.pos_lat_lng as pll
+import ptracks.libs.coords.pos_lat_lng as pll
 
 # model
-import model.glb_data as gdata
-import model.newton.defs_newton as ldefs
-import model.tMath as tMath
+import ptracks.model.glb_data as gdata
+import ptracks.model.newton.defs_newton as ldefs
+import ptracks.model.tMath as tMath
 
-import model.stock.fix as cfix
+import ptracks.model.stock.fix as cfix
 
 # < module data >----------------------------------------------------------------------------------
 

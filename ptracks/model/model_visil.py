@@ -41,18 +41,18 @@ import sys
 from PyQt4 import QtCore
 
 # libs
-import libs.coords.coord_sys as coords
+import ptracks.libs.coords.coord_sys as coords
 
 # model
-import model.glb_defs as gdefs
-import model.model_manager as model
+import ptracks.model.glb_defs as gdefs
+import ptracks.model.model_manager as model
 
-import model.emula.emula_visil as emula
-import model.visil.airspace_visil as airs
-import model.visil.landscape_visil as lands
+import ptracks.model.emula.emula_visil as emula
+import ptracks.model.visil.airspace_visil as airs
+import ptracks.model.visil.landscape_visil as lands
 
 # control
-import control.events.events_basic as event
+import ptracks.control.events.events_basic as event
 
 # < module data >----------------------------------------------------------------------------------
 

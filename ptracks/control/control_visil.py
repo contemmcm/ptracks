@@ -48,23 +48,23 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # from ..model 
-import model.glb_data as gdata
-import model.glb_defs as gdefs
+import ptracks.model.glb_data as gdata
+import ptracks.model.glb_defs as gdefs
 
-import model.model_visil as model
+import ptracks.model.model_visil as model
 
 # from ..view 
-import view.view_visil as view
+import ptracks.view.view_visil as view
 
 # from ..control 
-import control.control_basic as control
+import ptracks.control.control_basic as control
 # from ..control.config 
-import control.config.config_visil as config
+import ptracks.control.config.config_visil as config
 # from ..control.network 
-import control.network.get_address as gaddr
-import control.network.net_listener as listener
+import ptracks.control.network.get_address as gaddr
+import ptracks.control.network.net_listener as listener
 # from ..control.simula 
-import control.simula.sim_time as stime
+import ptracks.control.simula.sim_time as stime
 
 # < module data >----------------------------------------------------------------------------------
 

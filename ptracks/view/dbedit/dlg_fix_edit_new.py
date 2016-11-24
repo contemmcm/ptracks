@@ -37,10 +37,10 @@ import os
 from PyQt4 import QtCore, QtGui
 
 # model
-import model.items.fix_new as clsFix
+import ptracks.model.items.fix_new as clsFix
 
 # view
-import view.dbedit.dlg_fix_edit_new_ui as dlgFixEditNEW_ui
+import ptracks.view.dbedit.dlg_fix_edit_new_ui as dlgFixEditNEW_ui
 
 # < variáveis globais >--------------------------------------------------------------------------
 

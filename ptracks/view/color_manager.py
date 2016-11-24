@@ -39,7 +39,7 @@ import os
 import sys
 
 # control
-import control.events.events_basic as evtbas
+import ptracks.control.events.events_basic as evtbas
 
 # < module data >----------------------------------------------------------------------------------
 

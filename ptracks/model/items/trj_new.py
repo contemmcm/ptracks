@@ -37,11 +37,11 @@ import logging
 import sys
 
 # model
-import model.items.prc_model as model
-import model.items.brk_new as brktrj
+import ptracks.model.items.prc_model as model
+import ptracks.model.items.brk_new as brktrj
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

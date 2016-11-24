@@ -43,25 +43,25 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # model
-import model.glb_data as gdata
-import model.newton.defs_newton as ndefs
-import model.visil.defs_visil as ldefs
+import ptracks.model.glb_data as gdata
+import ptracks.model.newton.defs_newton as ndefs
+import ptracks.model.visil.defs_visil as ldefs
 # import model.visil.airspace as airs
 # import model.visil.landscape as lands
 # import model.visil.weather as wtr
-import model.visil.strip_model as mstp
-import model.visil.strip_table_model as stm
+import ptracks.model.visil.strip_model as mstp
+import ptracks.model.visil.strip_table_model as stm
 
 # view
-import view.visil.slate_radar as sltrdr
-import view.visil.statusbar_visil as stbar
-import view.visil.strip_visil as strp
+import ptracks.view.visil.slate_radar as sltrdr
+import ptracks.view.visil.statusbar_visil as stbar
+import ptracks.view.visil.strip_visil as strp
 #import view.visil.wid_runway_config as wrc
 #import view.visil.wid_weather_config as wwc
-import view.visil.wnd_main_visil_ui as wndmain_ui
+import ptracks.view.visil.wnd_main_visil_ui as wndmain_ui
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # resources
 import icons_rc

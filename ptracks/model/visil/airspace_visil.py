@@ -42,20 +42,20 @@ from PyQt4 import QtCore
 from PyQt4 import QtXml
 
 # libs
-import libs.coords.pos_lat_lng as pll
+import ptracks.libs.coords.pos_lat_lng as pll
 
 # model
-import model.stock.airspace_basic as airs
-import model.stock.fix as cfix
-import model.stock.flight_plan_item as cfpi
-import model.stock.holding as cesp
-import model.stock.runway as crun
-import model.stock.standard_route as stdrt
+import ptracks.model.stock.airspace_basic as airs
+import ptracks.model.stock.fix as cfix
+import ptracks.model.stock.flight_plan_item as cfpi
+import ptracks.model.stock.holding as cesp
+import ptracks.model.stock.runway as crun
+import ptracks.model.stock.standard_route as stdrt
 
-import model.items.apx_data as apxdata
-import model.items.esp_data as espdata
-import model.items.sub_data as subdata
-import model.items.trj_data as trjdata
+import ptracks.model.items.apx_data as apxdata
+import ptracks.model.items.esp_data as espdata
+import ptracks.model.items.sub_data as subdata
+import ptracks.model.items.trj_data as trjdata
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -37,11 +37,11 @@ import logging
 import sys
 
 # model
-import model.model_manager as model
-import model.emula.emula_piloto as emula
+import ptracks.model.model_manager as model
+import ptracks.model.emula.emula_piloto as emula
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

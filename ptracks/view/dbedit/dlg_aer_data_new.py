@@ -48,23 +48,23 @@ import sys
 from PyQt4 import QtCore, QtGui
 
 # model
-import model.items.aer_data as aerdata
+import ptracks.model.items.aer_data as aerdata
 
 # import model.figuras.clsFig as clsFig
 
 # view
-import view.dbedit.dlg_aer_edit_new as dlgedit
+import ptracks.view.dbedit.dlg_aer_edit_new as dlgedit
 # import view.dbedit.dlgCabCAD as dlgCabCAD
 # import view.dbedit.dlgFig as dlgFig
 # import view.dbedit.dlgPNS as dlgPNS
 # import view.dbedit.dlgPstCAD as dlgPstCAD
 
-import view.dbedit.dlg_aer_data_new_ui as dlgdata
+import ptracks.view.dbedit.dlg_aer_data_new_ui as dlgdata
 
 # import view.dbedit.dlgView as dlgView
 
 # control / events
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

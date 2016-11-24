@@ -37,13 +37,13 @@ import logging
 # import math
 
 # model
-import model.newton.defs_newton as ldefs
+import ptracks.model.newton.defs_newton as ldefs
 
-import model.emula.cine.abort_prc as abnd
-import model.emula.cine.obtem_brk as obrk
-import model.emula.cine.prc_dir_ponto as dp
-import model.emula.cine.trata_associado as tass
-import model.emula.cine.sentido_curva as scrv
+import ptracks.model.emula.cine.abort_prc as abnd
+import ptracks.model.emula.cine.obtem_brk as obrk
+import ptracks.model.emula.cine.prc_dir_ponto as dp
+import ptracks.model.emula.cine.trata_associado as tass
+import ptracks.model.emula.cine.sentido_curva as scrv
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -36,8 +36,8 @@ __date__ = "2015/11"
 import logging
 
 # model
-import model.newton.defs_newton as ldefs
-import model.emula.cine.abort_prc as abnd
+import ptracks.model.newton.defs_newton as ldefs
+import ptracks.model.emula.cine.abort_prc as abnd
 
 # < module data >----------------------------------------------------------------------------------
 

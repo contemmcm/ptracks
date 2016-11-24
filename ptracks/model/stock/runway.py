@@ -36,7 +36,7 @@ __date__ = "2016/01"
 import logging
 
 # model
-import model.stock.fix as CFix
+import ptracks.model.stock.fix as CFix
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -37,10 +37,10 @@ import logging
 import sys
 
 # model
-import model.items.pst_model as model
+import ptracks.model.items.pst_model as model
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

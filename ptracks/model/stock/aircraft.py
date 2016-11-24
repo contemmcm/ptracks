@@ -37,10 +37,10 @@ import copy
 # import logging
 
 # libs
-import libs.coords.pos_lat_lng as pll
+import ptracks.libs.coords.pos_lat_lng as pll
 
 # model
-import model.stock.adiru as cadi
+import ptracks.model.stock.adiru as cadi
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -36,7 +36,7 @@ __date__ = "2015/11"
 import logging
 
 # model
-import model.newton.defs_newton as ldefs
+import ptracks.model.newton.defs_newton as ldefs
 
 # < module data >----------------------------------------------------------------------------------
 

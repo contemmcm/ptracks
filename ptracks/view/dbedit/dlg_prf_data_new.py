@@ -39,14 +39,14 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # model
-import model.items.prf_data as dctPrf
+import ptracks.model.items.prf_data as dctPrf
 
 # view
-import view.dbedit.dlg_prf_edit_new as dlgPrfEditNEW
-import view.dbedit.dlg_prf_data_new_ui as CDlgPrfDataNEW_ui
+import ptracks.view.dbedit.dlg_prf_edit_new as dlgPrfEditNEW
+import ptracks.view.dbedit.dlg_prf_data_new_ui as CDlgPrfDataNEW_ui
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

@@ -39,7 +39,7 @@ __date__ = "2016/08"
 # import logging
 
 # from . 
-import control.control_manager as control
+import ptracks.control.control_manager as control
 
 # < module data >----------------------------------------------------------------------------------
 

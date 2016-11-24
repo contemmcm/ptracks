@@ -37,13 +37,13 @@ import logging
 import math
 
 # model
-import model.glb_defs as gdefs
-import model.newton.defs_newton as ldefs
+import ptracks.model.glb_defs as gdefs
+import ptracks.model.newton.defs_newton as ldefs
 
-import model.emula.cine.calc_proa_demanda as cpd
-import model.emula.cine.cine_calc as cincalc
-import model.emula.cine.cine_model as cinmodel
-import model.emula.cine.sentido_curva as scrv
+import ptracks.model.emula.cine.calc_proa_demanda as cpd
+import ptracks.model.emula.cine.cine_calc as cincalc
+import ptracks.model.emula.cine.cine_model as cinmodel
+import ptracks.model.emula.cine.sentido_curva as scrv
 
 # < module data >----------------------------------------------------------------------------------
 

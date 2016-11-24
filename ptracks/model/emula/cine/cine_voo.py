@@ -37,24 +37,24 @@ import logging
 import math
 
 # libs
-import libs.coords.coord_defs as cdefs
+import ptracks.libs.coords.coord_defs as cdefs
 
 # model
-import model.newton.defs_newton as ldefs
+import ptracks.model.newton.defs_newton as ldefs
 
-import model.emula.cine.cine_calc as cincalc
-import model.emula.cine.cine_model as cinmodel
+import ptracks.model.emula.cine.cine_calc as cincalc
+import ptracks.model.emula.cine.cine_model as cinmodel
 
-import model.emula.cine.obtem_brk as obrk
-import model.emula.cine.prc_aproximacao as apx
-import model.emula.cine.prc_decolagem as dep
-import model.emula.cine.prc_dir_fixo as dfix
-import model.emula.cine.prc_espera as esp
-import model.emula.cine.prc_pouso as arr
-import model.emula.cine.prc_subida as sub
-import model.emula.cine.prc_trajetoria as trj
-import model.emula.cine.dados_dinamicos as cine
-import model.emula.cine.trata_associado as tass
+import ptracks.model.emula.cine.obtem_brk as obrk
+import ptracks.model.emula.cine.prc_aproximacao as apx
+import ptracks.model.emula.cine.prc_decolagem as dep
+import ptracks.model.emula.cine.prc_dir_fixo as dfix
+import ptracks.model.emula.cine.prc_espera as esp
+import ptracks.model.emula.cine.prc_pouso as arr
+import ptracks.model.emula.cine.prc_subida as sub
+import ptracks.model.emula.cine.prc_trajetoria as trj
+import ptracks.model.emula.cine.dados_dinamicos as cine
+import ptracks.model.emula.cine.trata_associado as tass
 
 # < module data >----------------------------------------------------------------------------------
 

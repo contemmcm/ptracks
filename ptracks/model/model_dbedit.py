@@ -38,22 +38,22 @@ import os
 import sys
 
 # libs
-import libs.coords.coord_sys as coords
+import ptracks.libs.coords.coord_sys as coords
 
 # model
-import model.model_manager as model
-import model.newton.airspace_newton as airs
+import ptracks.model.model_manager as model
+import ptracks.model.newton.airspace_newton as airs
 
-import model.items.aer_data as aerdata
-import model.items.exe_data as exedata
-import model.items.fix_data as fixdata
-import model.items.prf_data as prfdata
+import ptracks.model.items.aer_data as aerdata
+import ptracks.model.items.exe_data as exedata
+import ptracks.model.items.fix_data as fixdata
+import ptracks.model.items.prf_data as prfdata
 # import model.items.sen_data as sendata
-import model.items.trf_data as trfdata
-import model.items.trj_data as trjdata
+import ptracks.model.items.trf_data as trfdata
+import ptracks.model.items.trj_data as trjdata
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

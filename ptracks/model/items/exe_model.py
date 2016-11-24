@@ -36,7 +36,7 @@ __date__ = "2015/11"
 # import logging
 
 # model
-import model.glb_defs as gdefs
+import ptracks.model.glb_defs as gdefs
 
 # < module data >----------------------------------------------------------------------------------
 

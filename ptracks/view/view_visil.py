@@ -41,12 +41,12 @@ import sys
 from PyQt4 import QtCore
 
 # view
-import view.color_manager as clrm
-import view.view_manager as view
-import view.visil.wnd_main_visil as wmain
+import ptracks.view.color_manager as clrm
+import ptracks.view.view_manager as view
+import ptracks.view.visil.wnd_main_visil as wmain
 
 # control
-import control.events.events_basic as event
+import ptracks.control.events.events_basic as event
 
 # < module data >----------------------------------------------------------------------------------
 

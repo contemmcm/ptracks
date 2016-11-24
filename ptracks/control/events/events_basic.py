@@ -37,7 +37,7 @@ __date__ = "2015/11"
 # import logging
 
 # from . 
-import control.events.events_model as model
+import ptracks.control.events.events_model as model
 
 # < module data >----------------------------------------------------------------------------------
 

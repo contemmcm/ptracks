@@ -39,16 +39,16 @@ import threading
 import time
 
 # model
-import model.glb_data as gdata
-import model.glb_defs as gdefs
+import ptracks.model.glb_data as gdata
+import ptracks.model.glb_defs as gdefs
 
-import model.emula.emula_model as model
+import ptracks.model.emula.emula_model as model
 
-import model.piloto.data_piloto as ldata
-import model.piloto.aircraft_piloto as canv
+import ptracks.model.piloto.data_piloto as ldata
+import ptracks.model.piloto.aircraft_piloto as canv
 
 # control
-import control.events.events_flight as events
+import ptracks.control.events.events_flight as events
 
 # < module data >----------------------------------------------------------------------------------
 

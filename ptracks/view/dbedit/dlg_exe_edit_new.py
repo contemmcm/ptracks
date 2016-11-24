@@ -37,10 +37,10 @@ import os
 from PyQt4 import QtCore, QtGui
 
 # model
-import model.items.exe_new as clsExe
+import ptracks.model.items.exe_new as clsExe
 
 # view
-import view.dbedit.dlg_exe_edit_new_ui as dlgExeEditNEW_ui
+import ptracks.view.dbedit.dlg_exe_edit_new_ui as dlgExeEditNEW_ui
 
 # < variáveis globais >--------------------------------------------------------------------------
 

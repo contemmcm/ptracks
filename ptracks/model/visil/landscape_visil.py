@@ -42,11 +42,11 @@ from PyQt4 import QtCore
 from PyQt4 import QtXml
 
 # libs
-import libs.coords.pos_lat_lng as pll
+import ptracks.libs.coords.pos_lat_lng as pll
 
 # model
-import model.stock.landscape_basic as land
-import model.stock.fix as cfix
+import ptracks.model.stock.landscape_basic as land
+import ptracks.model.stock.fix as cfix
 
 # < module data >----------------------------------------------------------------------------------
 

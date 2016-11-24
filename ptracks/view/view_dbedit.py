@@ -40,13 +40,13 @@ import sys
 from PyQt4 import QtGui
 
 # view
-import view.view_manager as view
+import ptracks.view.view_manager as view
 
 # view / dbEdit
-import view.dbedit.wnd_main_dbedit as wmain
+import ptracks.view.dbedit.wnd_main_dbedit as wmain
 
 # control / events
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

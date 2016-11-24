@@ -41,11 +41,11 @@ from PyQt4 import QtCore
 from PyQt4 import QtXml
 
 # model
-import model.items.esp_new as model
-import model.items.parser_utils as parser
+import ptracks.model.items.esp_new as model
+import ptracks.model.items.parser_utils as parser
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 

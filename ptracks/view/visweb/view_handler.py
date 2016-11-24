@@ -39,9 +39,9 @@ import os
 import SimpleHTTPServer
 
 # view
-import view.visweb.generate_anv_json as anvjson
-import view.visweb.generate_prf_json as prfjson
-import view.visweb.generate_status_json as sttjson
+import ptracks.view.visweb.generate_anv_json as anvjson
+import ptracks.view.visweb.generate_prf_json as prfjson
+import ptracks.view.visweb.generate_status_json as sttjson
 
 # < defines >--------------------------------------------------------------------------------------
 

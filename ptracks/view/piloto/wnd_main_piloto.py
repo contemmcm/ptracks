@@ -44,25 +44,25 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # model
-import model.glb_defs as gdefs
+import ptracks.model.glb_defs as gdefs
 
-import model.piloto.aircraft_piloto as anv
-import model.piloto.defs_piloto as ldefs
-import model.piloto.strip_model as mstp
-import model.piloto.strip_table_model as stm
+import ptracks.model.piloto.aircraft_piloto as anv
+import ptracks.model.piloto.defs_piloto as ldefs
+import ptracks.model.piloto.strip_model as mstp
+import ptracks.model.piloto.strip_table_model as stm
 
 # view
-import view.piloto.statusbar_piloto as statusbar
-import view.piloto.strip_visil as strips
-import view.piloto.wnd_main_piloto_ui as wndmain_ui
+import ptracks.view.piloto.statusbar_piloto as statusbar
+import ptracks.view.piloto.strip_visil as strips
+import ptracks.view.piloto.wnd_main_piloto_ui as wndmain_ui
 
-import view.piloto.dlg_altitude as dlgalt
-import view.piloto.dlg_direcao as dlgdir
-import view.piloto.dlg_velocidade as dlgvel
+import ptracks.view.piloto.dlg_altitude as dlgalt
+import ptracks.view.piloto.dlg_direcao as dlgdir
+import ptracks.view.piloto.dlg_velocidade as dlgvel
 
 # control
-import control.events.events_basic as events
-import control.events.events_config as evtcfg
+import ptracks.control.events.events_basic as events
+import ptracks.control.events.events_config as evtcfg
 
 # resources
 import icons_rc

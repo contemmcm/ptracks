@@ -42,11 +42,11 @@ import time
 from PyQt4 import QtCore, QtGui
 
 # view
-import view.view_manager as view
-import view.wizard.dlg_wizard as wzd
+import ptracks.view.view_manager as view
+import ptracks.view.wizard.dlg_wizard as wzd
 
 # control
-import control.events.events_basic as events
+import ptracks.control.events.events_basic as events
 
 # < module data >----------------------------------------------------------------------------------
 
