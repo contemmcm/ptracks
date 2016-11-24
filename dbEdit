@@ -10,4 +10,5 @@ fi
 HOST=`hostname`
 
 # executa o editor da base de dados
-/usr/bin/env python -OO ./dbEdit.py "$@" 2> ./dbEdit.$HOST.log
+PYTHONPATH="ptracks/"
+/usr/bin/env python -OO -m ptracks.dbEdit "$@" 2> ./dbEdit.$HOST.log
