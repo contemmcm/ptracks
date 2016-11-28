@@ -30,6 +30,35 @@
     </pista>
   </aerodromo>
 
+  <aerodromo nAer="SBRJ">
+    <descricao>SANTOS DUMONT</descricao>
+    <elevacao>10</elevacao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>2255S</cpoA>
+      <cpoB>4309.75W</cpoB>
+    </coord>
+
+    <pista nPst="02R">
+      <rumo>18</rumo>
+      <coord>
+        <tipo>G</tipo>
+        <cpoA>2255S</cpoA>
+        <cpoB>4309.75W</cpoB>
+      </coord>
+    </pista>
+
+    <pista nPst="20L">
+      <rumo>198</rumo>
+      <coord>
+        <tipo>G</tipo>
+        <cpoA>2254.28S</cpoA>
+        <cpoB>4309.8W</cpoB>
+      </coord>
+    </pista>
+  </aerodromo>
+
+
   <aerodromo nAer="SBSJ">
     <descricao>SÃO JOSÉ DOS CAMPOS</descricao>
     <elevacao>2120</elevacao>
@@ -109,43 +138,43 @@
     <elevacao>3479</elevacao>
     <coord>
       <tipo>G</tipo>
-      <cpoA>1552.267S</cpoA>
-      <cpoB>4755.117W</cpoB>
+      <cpoA>1552.3S</cpoA>
+      <cpoB>4756.14W</cpoB>
     </coord>
 
     <pista nPst="11R">
-      <rumo>106</rumo>
+      <rumo>86</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>1552.83S</cpoA>
-        <cpoB>4756.40W</cpoB>
+        <cpoA>1552.833S</cpoA>
+        <cpoB>04756.400W</cpoB>
       </coord>
     </pista>
 
     <pista nPst="11L">
-      <rumo>111</rumo>
+      <rumo>86</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>1551.82S</cpoA>
-        <cpoB>4755.65W</cpoB>
+        <cpoA>1551.816S</cpoA>
+        <cpoB>4755.650W</cpoB>
       </coord>
     </pista>
 
     <pista nPst="29L">
-      <rumo>287</rumo>
+      <rumo>274</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>1552.72S</cpoA>
-        <cpoB>4754.55S</cpoB>
+        <cpoA>1552.716S</cpoA>
+        <cpoB>04754.550S</cpoB>
       </coord>
     </pista>
 
     <pista nPst="29R">
-      <rumo>287</rumo>
+      <rumo>274</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>1551.70S</cpoA>
-        <cpoB>4753.87W</cpoB>
+        <cpoA>1551.700S</cpoA>
+        <cpoB>4753.866W</cpoB>
       </coord>
     </pista>
   </aerodromo>
@@ -155,16 +184,16 @@
     <elevacao>2459</elevacao>
     <coord>
       <tipo>G</tipo>
-      <cpoA>2326.133S</cpoA>
-      <cpoB>4628.383W</cpoB>
+      <cpoA>1552.3S</cpoA>
+      <cpoB>4756.14W</cpoB>
     </coord>
 
     <pista nPst="09L">
       <rumo>93</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>2326.05S</cpoA>
-        <cpoB>4629.00W</cpoB>
+        <cpoA>2326.050S</cpoA>
+        <cpoB>04628.950W</cpoB>
       </coord>
     </pista>
 
@@ -172,8 +201,8 @@
       <rumo>93</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>2326.500S</cpoA>
-        <cpoB>4629.217W</cpoB>
+        <cpoA>2326.333S</cpoA>
+        <cpoB>04629.217W</cpoB>
       </coord>
     </pista>
 
@@ -181,8 +210,8 @@
       <rumo>273</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>2325.867S</cpoA>
-        <cpoB>4627.533W</cpoB>
+        <cpoA>2325.900S</cpoA>
+        <cpoB>04627.833W</cpoB>
       </coord>
     </pista>
 
@@ -190,10 +219,39 @@
       <rumo>273</rumo>
       <coord>
         <tipo>G</tipo>
-        <cpoA>2325.500S</cpoA>
-        <cpoB>4625.917W</cpoB>
+        <cpoA>2325.600S</cpoA>
+        <cpoB>04627.500W</cpoB>
       </coord>
     </pista>
+  </aerodromo>
+
+  <aerodromo nAer="SBBH">
+    <nome>BELO HORIZONTE</nome>
+    <elevacao>2589</elevacao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>1950.780S</cpoA>
+      <cpoB>04357.700W</cpoB>
+    </coord>
+
+    <pista nPst="13">
+      <rumo>132</rumo>
+      <coord>
+        <tipo>G</tipo>
+        <cpoA>1950.780S</cpoA>
+        <cpoB>04357.700W</cpoB>
+      </coord>
+    </pista>
+
+    <pista nPst="31">
+      <rumo>312</rumo>
+      <coord>
+        <tipo>G</tipo>
+        <cpoA>1951.180S</cpoA>
+        <cpoB>04356.190W</cpoB>
+      </coord>
+    </pista>
+
   </aerodromo>
 
 </aerodromos>

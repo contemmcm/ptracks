@@ -26,4 +26,10 @@
     <rumo>270</rumo>
   </espera>
 
+  <espera nEsp="77">
+    <fixo>ARAXA</fixo>
+    <sentido>E</sentido>
+    <rumo>6</rumo>
+  </espera>
+
 </esperas>

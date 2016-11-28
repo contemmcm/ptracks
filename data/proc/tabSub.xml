@@ -219,7 +219,8 @@
       </coord>
       <altitude>12000</altitude>
       <velocidade>300</velocidade>
-      <procedimento>TRJ1100</procedimento>
+      <procedimento>TRJ1101</procedimento>
     </breakpoint>
+  </subida>
 
 </subidas>

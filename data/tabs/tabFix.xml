@@ -38,6 +38,15 @@
     </coord>
   </fixo>
 
+  <fixo nFix="BGC">
+  <descricao>BRAGANCA</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>2257.080S</cpoA>
+      <cpoB>04634.190W</cpoB>
+    </coord>
+  </fixo>
+
   <fixo nFix="CAST">
     <descricao>CAST</descricao>
     <coord>
@@ -133,6 +142,15 @@
     </coord>
   </fixo>
 
+  <fixo nFix="ISOPI">
+    <descricao>ISOPI</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>1639.570S</cpoA>
+      <cpoB>04732.530W</cpoB>
+    </coord>
+  </fixo>
+
   <fixo nFix="KELY">
     <descricao>KELY</descricao>
     <coord>
@@ -169,6 +187,15 @@
     </coord>
   </fixo>
 
+  <fixo nFix="LUVSU">
+    <descricao>LUVSU</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>1733.450S</cpoA>
+      <cpoB>04633.510W</cpoB>
+    </coord>
+  </fixo>
+
   <fixo nFix="LUZIANIA">
     <descricao>LUZIANIA</descricao>
     <coord>
@@ -186,6 +213,15 @@
       <tipo>G</tipo>
       <cpoA>2330.250S</cpoA>
       <cpoB>04638.030W</cpoB>
+    </coord>
+  </fixo>
+
+  <fixo nFix="MAVNI">
+    <descricao>MAVNI</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>1729.783S</cpoA>
+      <cpoB>04725.616W</cpoB>
     </coord>
   </fixo>
 
@@ -214,6 +250,15 @@
       <tipo>G</tipo>
       <cpoA>2224.780S</cpoA>
       <cpoB>04617.340W</cpoB>
+    </coord>
+  </fixo>
+
+  <fixo nFix="MUKEL">
+    <descricao>MUKEL</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>2040.890S</cpoA>
+      <cpoB>04654.980W</cpoB>
     </coord>
   </fixo>
 
@@ -280,6 +325,15 @@
     </coord>
   </fixo>
 
+  <fixo nFix="PADAD">
+    <descricao>PADAD</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>2143.500S</cpoA>
+      <cpoB>04645.750W</cpoB>
+    </coord>
+  </fixo>
+
   <fixo nFix="PERLA">
     <descricao>PERLA</descricao>
     <coord>
@@ -300,12 +354,30 @@
     </coord>
   </fixo>
 
+  <fixo nFix="PORDU">
+    <descricao>PORDU</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>1920.960S</cpoA>
+      <cpoB>04433.430W</cpoB>
+    </coord>
+  </fixo>
+
   <fixo nFix="PORNA">
     <descricao>PORNA</descricao>
     <coord>
       <tipo>G</tipo>
       <cpoA>2332.370S</cpoA>
       <cpoB>04415.550W</cpoB>
+    </coord>
+  </fixo>
+
+  <fixo nFix="REINA">
+    <descricao>REINA</descricao>
+    <coord>
+      <tipo>G</tipo>
+      <cpoA>1826.280S</cpoA>
+      <cpoB>04534.280W</cpoB>
     </coord>
   </fixo>
 
