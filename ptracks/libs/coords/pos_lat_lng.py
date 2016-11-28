@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ---------------------------------------------------------------------------------------------------
-pos_lat_lng.
+pos_lat_lng
 
 DOCUMENT ME!
 
@@ -34,13 +34,6 @@ __date__ = "2016/01"
 
 # python library
 import copy
-# import logging
-
-# < module data >----------------------------------------------------------------------------------
-
-# logger
-# M_LOG = logging.getLogger(__name__)
-# M_LOG.setLevel(logging.DEBUG)
 
 # < class CPosLatLng >-----------------------------------------------------------------------------
 
@@ -49,44 +42,30 @@ class CPosLatLng(object):
     DOCUMENT ME!
     """
     # ---------------------------------------------------------------------------------------------
-
     def __init__(self, ff_pos_lat=0., ff_pos_lng=0.):
         """
         DOCUMENT ME!
         """
-        # logger
-        # M_LOG.info("__init__:>>")
-
         # inicia a super classe
         super(CPosLatLng, self).__init__()
 
+        # recebeu um coordenada ?
         if isinstance(ff_pos_lat, CPosLatLng):
-
             ff_pos_lng = ff_pos_lat.f_lng
             ff_pos_lat = ff_pos_lat.f_lat
 
-        # verifica parâmetros de entrada
+        # check input
         assert -90. <= ff_pos_lat <= 90.
         assert -180. <= ff_pos_lng <= 180.
 
         self.__f_lat = ff_pos_lat
-        # M_LOG.info("self.__f_lat: %f" % self.__f_lat)
-
         self.__f_lng = ff_pos_lng
-        # M_LOG.info("self.__f_lng: %f" % self.__f_lng)
-
-        # logger
-        # M_LOG.info("__init__:<<")
 
     # ---------------------------------------------------------------------------------------------
-
     def copy(self):
         """
-        copy constructor.
+        copy constructor
         """
-        # logger
-        # M_LOG.info("copy:><")
-
         # return a copy
         return copy.deepcopy(self)
 
@@ -95,7 +74,6 @@ class CPosLatLng(object):
     # =============================================================================================
 
     # ---------------------------------------------------------------------------------------------
-    
     @property
     def f_lat(self):
         """
@@ -108,14 +86,13 @@ class CPosLatLng(object):
         """
         set latitude
         """
-        # check input parameters
+        # check input
         assert -90. <= f_val <= 90.
         
         # save latitude
         self.__f_lat = f_val
 
     # ---------------------------------------------------------------------------------------------
-    
     @property
     def f_lng(self):
         """
@@ -128,7 +105,7 @@ class CPosLatLng(object):
         """
         set longitude
         """
-        # check input parameters
+        # check input
         assert -180. <= f_val <= 180.
         
         # save longitude
@@ -141,17 +118,10 @@ class CPosLatLngRef(CPosLatLng):
     DOCUMENT ME!
     """
     # ---------------------------------------------------------------------------------------------
-
     def __init__(self, f_ref, ff_variation, ff_track, ff_dcl_mag):
         """
         DOCUMENT ME!
         """
-        # logger
-        # M_LOG.info("__init__:>>")
-
-        # verifica parâmetros de entrada
-        # assert f_control
-
         # convert difference to radians 
         lf_dif = math.radians(ff_track - ff_variation)
 
@@ -161,8 +131,5 @@ class CPosLatLngRef(CPosLatLng):
 
         # inicia a super classe
         super(CPosLatLngRef, self).__init__(lf_lat, lf_lng)
-
-        # logger
-        # M_LOG.info("__init__:<<")
 
 # < the end >--------------------------------------------------------------------------------------

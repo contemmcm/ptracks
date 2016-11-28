@@ -32,52 +32,37 @@ __date__ = "2015/11"
 
 # < imports >--------------------------------------------------------------------------------------
 
-# python library
-# import logging
-
 # libs
 import coord_defs as cdefs
 import coord_conv as conv
 import coord_geod as geod
 
-# < module data >----------------------------------------------------------------------------------
-
-# logger
-# M_LOG = logging.getLogger(__name__)
-# M_LOG.setLevel(logging.DEBUG)
-
 # < class CCoordModel >----------------------------------------------------------------------------
 
 class CCoordModel(object):
     """
-    mantém os detalhes de um sistema de coordenadas.
+    mantém os detalhes de um sistema de coordenadas
     """
     # ---------------------------------------------------------------------------------------------
-
     def __init__(self, ff_ref_lat=cdefs.M_REF_LAT, ff_ref_lng=cdefs.M_REF_LNG, ff_dcl_mag=cdefs.M_DCL_MAG):
         """
-        cria um sistema de coordenadas.
+        cria um sistema de coordenadas
         """
-        # logger
-        # M_LOG.info("__init__:>>")
-
         # inicia super classe
         super(CCoordModel, self).__init__()
 
-        # coordenadas geográficas de referênica e declinação magnética
+        # coordenadas geográficas de referênica
         self.__f_ref_lat = ff_ref_lat
         self.__f_ref_lng = ff_ref_lng
-        self.__f_dcl_mag = ff_dcl_mag
 
-        # logger
-        # M_LOG.info("__init__:<<")
+        # declinação magnética
+        self.__f_dcl_mag = ff_dcl_mag
 
     # =============================================================================================
     # data
     # =============================================================================================
 
     # ---------------------------------------------------------------------------------------------
-
     @property
     def f_ref_lat(self):
         """
@@ -93,7 +78,6 @@ class CCoordModel(object):
         self.__f_ref_lat = f_val
 
     # ---------------------------------------------------------------------------------------------
-
     @property
     def f_ref_lng(self):
         """
@@ -109,7 +93,6 @@ class CCoordModel(object):
         self.__f_ref_lng = f_val
 
     # ---------------------------------------------------------------------------------------------
-
     @property
     def f_dcl_mag(self):
         """

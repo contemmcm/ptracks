@@ -45,12 +45,6 @@ import coord_defs as cdefs
 import coord_geod as geod
 import coord_geog as geog
 
-# < module data >----------------------------------------------------------------------------------
-
-# logger
-# M_LOG = logging.getLogger(__name__)
-# M_LOG.setLevel(logging.DEBUG)
-
 # < class CCoordSys >------------------------------------------------------------------------------
 
 class CCoordSys(model.CCoordModel):
@@ -58,18 +52,12 @@ class CCoordSys(model.CCoordModel):
     mantém os detalhes de um sistema de coordenadas
     """
     # ---------------------------------------------------------------------------------------------
-    # void (???)
     def __init__(self, ff_ref_lat=cdefs.M_REF_LAT, ff_ref_lng=cdefs.M_REF_LNG, ff_dcl_mag=cdefs.M_DCL_MAG):
-
-        # logger
-        # M_LOG.info("__init__:>>")
-                
+        """
+        constructor
+        """
         # init super class
         super(CCoordSys, self).__init__(ff_ref_lat, ff_ref_lng, ff_dcl_mag)
-
-        # M_LOG.debug(u"latitude de referência..:[{}]".format(ff_ref_lat))
-        # M_LOG.debug(u"longitude de referência.:[{}]".format(ff_ref_lng))
-        # M_LOG.debug(u"declinação de referência:[{}]".format(ff_dcl_mag))
 
         # herdados de CCoordModel
         # self.f_ref_lat    # latitude de referência
@@ -83,9 +71,9 @@ class CCoordSys(model.CCoordModel):
         assert self.__nt_ref
 
         # coordenadas de referência
-        cdefs.D_REF_LAT = ff_ref_lat
-        cdefs.D_REF_LNG = ff_ref_lng
-        cdefs.D_DCL_MAG = ff_dcl_mag
+        cdefs.M_REF_LAT = ff_ref_lat
+        cdefs.M_REF_LNG = ff_ref_lng
+        cdefs.M_DCL_MAG = ff_dcl_mag
 
         # dicionário de fixos
         self.__dct_fix = None
@@ -93,11 +81,15 @@ class CCoordSys(model.CCoordModel):
         # dicionário de indicativos
         self.__dct_fix_indc = None
 
-        # logger
-        # M_LOG.info("__init__:<<")
+    # ---------------------------------------------------------------------------------------------
+    def decl_xyz(self, ff_x, ff_y, ff_z, ff_decl=0.):
+        """
+        conversão de coordenadas geográficas em (x, y, z)
+        """
+        # retorna a coordenada declinada x, y z
+        return geog.decl_xyz(ff_x, ff_y, ff_z, ff_decl)
 
-    # -------------------------------------------------------------------------------------------------
-    # void (???)
+    # ---------------------------------------------------------------------------------------------
     def from_dict(self, f_dict):
         """
         conversão de um dicionário em latitude e longitude
@@ -106,9 +98,6 @@ class CCoordSys(model.CCoordModel):
 
         @return lat, long
         """
-        # logger
-        # M_LOG.info("from_dict:>>")
-                
         # check input
         assert f_dict
 
@@ -120,14 +109,10 @@ class CCoordSys(model.CCoordModel):
         # coordenada
         li_rc, lf_lat, lf_lng = self.new_coord(f_dict["tipo"], f_dict["cpoA"], l_cpo_b, l_cpo_c, l_cpo_d)
 
-        # logger
-        # M_LOG.info("from_dict:<<")
-                
         # retorna a coordenada em latitude e longitude
         return lf_lat, lf_lng
 
-    # ------------------------------------------------------------------------------------------------
-    # void (???)
+    # ---------------------------------------------------------------------------------------------
     def __geo_fixo(self, fs_cpo_a, f_dct_fix=None):
         """
         encontra coordenada geográfica do fixo
@@ -137,16 +122,12 @@ class CCoordSys(model.CCoordModel):
 
         @return 0 se Ok, senão -1 = NOk
         """
-        # logger
-        # M_LOG.info("__geo_fixo:>>")
-                
         if f_dct_fix is None:
             # dicionário de fixos
             f_dct_fix = self.__dct_fix
 
         # indicativo do fixo
         ls_fix = str(fs_cpo_a).strip().upper()
-        # M_LOG.debug("ls_fix:[%s]", ls_fix)
 
         # fixo existe no dicionário ?
         if ls_fix in f_dct_fix:
@@ -154,43 +135,27 @@ class CCoordSys(model.CCoordModel):
             if f_dct_fix[ls_fix].v_fix_ok:
                 # latitude
                 lf_lat = f_dct_fix[ls_fix].f_fix_lat
-                # M_LOG.debug("latitude:[%f]", lf_lat)
 
                 # longitude
                 lf_lng = f_dct_fix[ls_fix].f_fix_lng
-                # M_LOG.debug("longitude:[%f]", lf_lng)
-
-                # logger
-                # M_LOG.debug("<E02: ok.")
 
                 # return
                 return 0, lf_lat, lf_lng
 
-        # logger
-        # M_LOG.warn("fixo:[%s] não existe no dicionário.", fs_cpo_a)
-
-        # logger
-        # M_LOG.info("__geo_fixo:<<")
-                
         # return
         return -1, 0., 0.
 
     # ---------------------------------------------------------------------------------------------
-    # void (???)
     def geo2xyz(self, f_lat, f_lng, f_alt=0.):
         """
         conversão de coordenadas geográficas em (x, y, z)
         """
-        # logger
-        # M_LOG.info("geo2xyz:><")
-
         # retorna a coordenada em x, y z
         # return geog.geo2xyz(f_lat, f_lng, self.__nt_ref.lat, self.__nt_ref.lng)
         # return geod.geod2ecef(f_lat, f_lng, f_alt)
         return geog.geo2xyz_3(f_lat, f_lng, f_alt)
 
-    # ------------------------------------------------------------------------------------------------
-    # void (???)
+    # ---------------------------------------------------------------------------------------------
     def __get_fixo_by_indc(self, fs_cpo_a, f_dct_fix_indc=None):
         """
         encontra o número do fixo pelo indicativo
@@ -200,9 +165,6 @@ class CCoordSys(model.CCoordModel):
 
         @return número do fixo ou -1
         """
-        # logger
-        # M_LOG.info("__get_fixo_by_indc:>>")
-                
         # check input
         assert fs_cpo_a
 
@@ -215,23 +177,15 @@ class CCoordSys(model.CCoordModel):
         
         # indicativo do fixo
         ls_fix = str(fs_cpo_a).strip().upper()
-        # M_LOG.debug("ls_fix:[{}]".format(ls_fix))
 
-        # logger
-        # M_LOG.info("__get_fixo_by_indc:<<")
-                
         # return
         return f_dct_fix_indc.get(ls_fix, -1)
 
     # ---------------------------------------------------------------------------------------------
-    # void (???)
     def new_coord(self, fc_tipo, fs_cpo_a, fs_cpo_b="", fs_cpo_c="", fs_cpo_d=""):
         """
         cria uma coordenada
         """
-        # logger
-        # M_LOG.info("new_coord:>>")
-                
         # check input
         if fc_tipo not in cdefs.D_SET_COORD_VALIDAS:
             # logger
@@ -252,37 +206,31 @@ class CCoordSys(model.CCoordModel):
 
             # obtém as coordenadas geográficas do fixo(cpoA)
             li_rc, lf_lat, lf_lng = self.__geo_fixo(fs_cpo_a)
-            # M_LOG.debug("new_coord:coords(1): Lat:[%f]/Lng:[%f].", lf_lat, lf_lng)
 
             if 0 != li_rc:
                 # logger
                 l_log = logging.getLogger("CCoordSys::new_coord")
                 l_log.setLevel(logging.ERROR)
-                l_log.error(u"<E02: fixo {} inexistente no dicionário de fixos.".format(fs_cpo_a))
+                l_log.error(u"<E02: fixo {} inexistente.".format(fs_cpo_a))
 
                 # cai fora
                 return li_rc, lf_lat, lf_lng
 
             # converte para cartesiana
             lf_x, lf_y, _ = self.geo2xyz(lf_lat, lf_lng)
-            # M_LOG.debug("new_coord:coords(2): X:[%f]/Y:[%f]", lf_x, lf_y)
 
             # distância(m)
             l_vd = float(fs_cpo_b) * cdefs.D_CNV_NM2M
-            # M_LOG.debug("new_coord:distância(m):[%f]", l_vd)
 
             # radial(radianos)
             l_vr = math.radians(conv.azm2ang(float(fs_cpo_c)))
-            # M_LOG.debug("new_coord:radial(rad):[%f]", l_vr)
 
             # x, y do ponto
             lf_x += l_vd * math.cos(l_vr)
             lf_y += l_vd * math.sin(l_vr)
-            # M_LOG.debug("new_coord:coords(3): X:[%f]/Y:[%f]", lf_x, lf_y)
 
             # converte para geográfica
             lf_lat, lf_lng, _ = self.xyz2geo(lf_x, lf_y)
-            # M_LOG.debug("new_coord:coords(4): Lat:[%f]/Lng:[%f]", lf_lat, lf_lng)
 
             # ok
             return li_rc, lf_lat, lf_lng
@@ -291,13 +239,12 @@ class CCoordSys(model.CCoordModel):
         elif 'F' == fc_tipo:
             # obtém as coordenadas geográficas do fixo(cpoA)
             li_rc, lf_lat, lf_lng = self.__geo_fixo(fs_cpo_a)
-            # M_LOG.debug("new_coord:coords(1): Lat:[%f]/Lng:[%f].", lf_lat, lf_lng)
 
             if 0 != li_rc:
                 # logger
                 l_log = logging.getLogger("CCoordSys::new_coord")
                 l_log.setLevel(logging.ERROR)
-                l_log.error(u"<E03: fixo {} inexistente no dicionário de fixos.".format(fs_cpo_a))
+                l_log.error(u"<E03: fixo {} inexistente.".format(fs_cpo_a))
 
             # cai fora
             return li_rc, lf_lat, lf_lng
@@ -306,11 +253,9 @@ class CCoordSys(model.CCoordModel):
         elif 'G' == fc_tipo:
             # latitude
             lf_lat = conv.parse_ica(str(fs_cpo_a))
-            # M_LOG.debug("new_coord:lf_lat: " + str(lf_lat))
 
             # longitude
             lf_lng = conv.parse_ica(str(fs_cpo_b))
-            # M_LOG.debug("new_coord:lf_lng: " + str(lf_lng))
 
             # ok
             return 0, lf_lat, lf_lng
@@ -324,33 +269,41 @@ class CCoordSys(model.CCoordModel):
                 # logger
                 l_log = logging.getLogger("CCoordSys::new_coord")
                 l_log.setLevel(logging.ERROR)
-                l_log.error(u"<E04: fixo {} inexistente no dicionário de fixos.".format(fs_cpo_a))
+                l_log.error(u"<E04: fixo {} inexistente.".format(fs_cpo_a))
 
                 # cai fora
                 return -1, -90., -180.
 
             # obtém as coordenadas geográficas do indicativo do fixo
             li_rc, lf_lat, lf_lng = self.__geo_fixo(li_rc)
-            # M_LOG.debug("new_coord:coords(1): Lat:[%f]/Lng:[%f].", lf_lat, lf_lng)
 
             if li_rc < 0:
                 # logger
                 l_log = logging.getLogger("CCoordSys::new_coord")
                 l_log.setLevel(logging.ERROR)
-                l_log.error(u"<E05: fixo {} inexistente no dicionário de fixos.".format(fs_cpo_a))
+                l_log.error(u"<E05: fixo {} inexistente.".format(fs_cpo_a))
 
             # cai fora
             return li_rc, lf_lat, lf_lng
+
+        # coordenada geográfica formato AISWEB ?(formato X:999:99:99.99)
+        elif 'K' == fc_tipo:
+            # latitude
+            lf_lat = conv.parse_aisweb(str(fs_cpo_a))
+
+            # longitude
+            lf_lng = conv.parse_aisweb(str(fs_cpo_b))
+
+            # ok
+            return 0, lf_lat, lf_lng
 
         # coordenada geográfica formato decimal ?(formato +/-999.9999)
         elif 'L' == fc_tipo:
             # latitude
             lf_lat = float(fs_cpo_a)
-            # M_LOG.debug("new_coord:lf_lat: " + str(lf_lat))
 
             # longitude
             lf_lng = float(fs_cpo_b)
-            # M_LOG.debug("new_coord:lf_lng: " + str(lf_lng))
 
             # ok
             return 0, lf_lat, lf_lng
@@ -360,9 +313,7 @@ class CCoordSys(model.CCoordModel):
             li_rc = -1
 
             lf_lat = -90.
-            # M_LOG.debug("new_coord:lf_lat: " + str(lf_lat))
             lf_lng = -180.
-            # M_LOG.debug("new_coord:lf_lng: " + str(lf_lng))
 
             # cai fora
             return li_rc, lf_lat, lf_lng
@@ -372,9 +323,7 @@ class CCoordSys(model.CCoordModel):
             li_rc = -1
 
             lf_lat = -90.
-            # M_LOG.debug("new_coord:lf_lat: " + str(lf_lat))
             lf_lng = -180.
-            # M_LOG.debug("new_coord:lf_lng: " + str(lf_lng))
 
             # cai fora
             return li_rc, lf_lat, lf_lng
@@ -388,46 +337,15 @@ class CCoordSys(model.CCoordModel):
 
             # cai fora
             return -1, -90., -180.
-        '''
-        # coordenada geográfica em decimal ?
-        elif ("G0" == fc_tipo) or ("GC" == fc_tipo) or
-             ("GD" == fc_tipo) or ("GF" == fc_tipo) or
-             ("GG" == fc_tipo) or ("GP" == fc_tipo):
-            lf_lat = float(f_dict [ "latitude" ])
-            # M_LOG.debug("new_coord:lf_lat: " + str(lf_lat))
 
-            lf_lng = float(f_dict [ "longitude" ])
-            # M_LOG.debug("new_coord:lf_lng: " + str(lf_lng))
-
-        # coordenada geográfica formato ICA ?(formato GGGMM.mmmH)
-        elif "G1" == fc_tipo:
-            lf_lat = conv.parse_ica(f_dict [ "latitude" ])
-            # M_LOG.debug("new_coord:lf_lat: " + str(lf_lat))
-            lf_lng = conv.parse_ica(f_dict [ "longitude" ])
-            # M_LOG.debug("new_coord:lf_lng: " + str(lf_lng))
-
-        # coordenada geográfica formato ICA ?(formato GGGMM.mmmH/GGMM.mmmH)
-        elif "GI" == fc_tipo:
-            lf_lat = conv.parse_ica_2(f_dict [ "latitude" ])
-            # M_LOG.debug("new_coord:lf_lat: " + str(lf_lat))
-            lf_lng = conv.parse_ica_2(f_dict [ "longitude" ])
-            # M_LOG.debug("new_coord:lf_lng: " + str(lf_lng))
-        '''
-        # logger
-        # M_LOG.info("new_coord:<<")
-                
         # return
         return -1, -90., -180.
 
     # ---------------------------------------------------------------------------------------------
-    # void (???)
     def xyz2geo(self, ff_x, ff_y, ff_z=0.):
         """
         conversão de coordenadas geográficas em (x, y, z)
         """
-        # logger
-        # M_LOG.info("xyz2geo:>>")
-
         # retorna a coordenada em latitude e longitude
         # return geog.xy2geo(ff_x, ff_y)
         # return geod.ecef2geod(ff_x, ff_y, ff_z)
