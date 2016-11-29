@@ -34,7 +34,9 @@ __date__ = "2016/10"
 
 # python library
 import logging
-# import math
+
+# control
+import control.control_debug as dbg
 
 # model
 import ptracks.model.newton.defs_newton as ldefs
@@ -44,12 +46,6 @@ import ptracks.model.emula.cine.obtem_brk as obrk
 import ptracks.model.emula.cine.prc_dir_ponto as dp
 import ptracks.model.emula.cine.trata_associado as tass
 import ptracks.model.emula.cine.sentido_curva as scrv
-
-# < module data >----------------------------------------------------------------------------------
-
-# logger
-# M_LOG = logging.getLogger(__name__)
-# M_LOG.setLevel(logging.DEBUG)
 
 # -------------------------------------------------------------------------------------------------
 def __obtem_apx_per(f_atv, f_apx):
@@ -61,9 +57,6 @@ def __obtem_apx_per(f_atv, f_apx):
 
     @return True se encontrou a aproximação perdida, senão False (inexistente)
     """
-    # logger
-    # M_LOG.info("__obtem_apx_per:<<")
-
     # check input
     assert f_atv
     assert f_apx
@@ -73,16 +66,8 @@ def __obtem_apx_per(f_atv, f_apx):
         # inicia campo procedimento da aeronave com posição da ApxPerdida
         f_atv.ptr_trf_prc = f_apx.ptr_apx_prc_ape
 
-        # aeródromo e pista estabelecidos constam na struct ApxPerdida
-
-        # logger
-        # M_LOG.info("<E01: ok.")
-
-        # retorna sucesso na pesquisa
+        # aeródromo e pista estabelecidos existem. retorna sucesso na pesquisa
         return True
-
-    # logger
-    # M_LOG.info("__obtem_apx_per:<<")
 
     # retorna condição de falha na pesquisa
     return False
@@ -97,28 +82,17 @@ def __obtem_ils(f_atv, f_apx):
 
     @return True se encontrou o ILS, senão False (inexistente)
     """
-    # logger
-    # M_LOG.info("__obtem_ils:<<")
-
     # check input
     assert f_atv
     assert f_apx
 
     # ILS ok ?
     if (f_apx.ptr_apx_prc_ils is not None) and (f_apx.ptr_apx_prc_ils.v_prc_ok):
-        # inicia campo procedimento da aeronave com posição da ApxPerdida
+        # inicia campo procedimento da aeronave com posição do ILS
         f_atv.ptr_trf_prc = f_apx.ptr_apx_prc_ils
 
-        # aeródromo e a pista estabelecidos constam na struct ILS
-
-        # logger
-        # M_LOG.info("<E01: ok.")
-
-        # retorna sucesso na pesquisa
+        # aeródromo e a pista estabelecidos existem. retorna sucesso na pesquisa
         return True
-
-    # logger
-    # M_LOG.info("__obtem_ils:<<")
 
     # retorna condição de falha na pesquisa
     return False
@@ -133,26 +107,14 @@ def __obtem_pouso(f_atv, f_apx):
 
     @return True se encontrou o Pouso, senão False (inexistente)
     """
-    # logger
-    # M_LOG.info("__obtem_pouso:<<")
-
     # check input
     assert f_atv
     assert f_apx
 
-    # pouso ok ?
-    if (f_apx.ptr_apx_prc_pouso is not None) and (f_apx.ptr_apx_prc_pouso.v_prcok):
-        # inicia campo procedimento da aeronave com posição da ApxPerdida
-        f_atv.ptr_trf_prc = f_apx.ptr_apx_prc_pouso
-
-        # verifica se o aeródromo e a pista estabelecidos constam na struct DECPOUSO
-
-        # PISTA *
-        l_pis = f_apx.ptr_apx_prc_pouso.pDecPousoPtrPis
-        assert l_pis
-
+    # pista de pouso ok ?
+    if (f_apx.ptr_apx_pis is not None) and (f_apx.ptr_apx_pis.v_pst_ok):
         # ângulo mínimo para o pouso
-        lf_ang = abs(f_atv.f_trf_pro_atu - l_pis.f_pst_rumo)
+        lf_ang = abs(f_atv.f_trf_pro_atu - f_apx.ptr_apx_pis.i_pst_rumo)
 
         # tem condições de fazer pouso direto ?
         if lf_ang <= 15.:
@@ -160,24 +122,24 @@ def __obtem_pouso(f_atv, f_apx):
             f_atv.en_atv_fase = ldefs.E_FASE_APXALINHAR
 
             # estabelece a proa a ser atingida (rumo da pista)
-            f_atv.f_atv_alt_dem = l_pis.f_pst_rumo
+            f_atv.f_atv_pro_dem = f_apx.ptr_apx_pis.i_pst_rumo
 
             # inicia a curva pelo menor lado
             scrv.sentido_curva(f_atv)
 
-        # otherwise, aeronave não tem condições de realizar o pouso direto...
-        else:
-            # direciona a aeronave para fase inicial da aproximação
-            f_atv.en_atv_fase = ldefs.E_FASE_ZERO
+            # pointer do aeródromo
+            f_atv.ptr_atv_aer = f_apx.ptr_apx_aer
+            # pointer da pista
+            f_atv.ptr_atv_pst = f_apx.ptr_apx_pis
 
-        # logger
-        # M_LOG.info("<E01: ok.")
+            # coloca em procedimento de pouso
+            f_atv.en_trf_fnc_ope = ldefs.E_POUSO
+
+        # volta para fase inicial do procedimento de aproximação OU fase inicial do pouso
+        f_atv.en_atv_fase = ldefs.E_FASE_ZERO
 
         # retorna sucesso na pesquisa
         return True
-
-    # logger
-    # M_LOG.info("__obtem_pouso:<<")
 
     # retorna condição de falha na pesquisa
     return False
@@ -191,13 +153,6 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
     @param f_cine_data: dados da cinemática
     @param f_stk_context: pointer to stack
     """
-    # variáveis locais
-    # BREAKPOINT *
-    l_brk = None
-
-    # logger
-    # M_LOG.info("prc_aproximacao:<<")
-
     # check input
     assert f_atv
 
@@ -206,7 +161,7 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
         # logger
         l_log = logging.getLogger("prc_aproximacao")
         l_log.setLevel(logging.ERROR)
-        l_log.error("<E01: aeronave não ativa.")
+        l_log.error(u"<E01: aeronave não ativa.")
 
         # abort procedure
         abnd.abort_prc(f_atv)
@@ -219,7 +174,7 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
         # logger
         l_log = logging.getLogger("prc_aproximacao")
         l_log.setLevel(logging.ERROR)
-        l_log.error("<E02: performance não existe.")
+        l_log.error(u"<E02: performance não existe.")
 
         # abort procedure
         abnd.abort_prc(f_atv)
@@ -231,17 +186,20 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
     l_apx = f_atv.ptr_trf_prc
 
     # aproximação ok ?
-    if (l_apx is None) or not l_apx.v_prc_ok:
+    if (l_apx is None) or (not l_apx.v_prc_ok):
         # logger
         l_log = logging.getLogger("prc_aproximacao")
         l_log.setLevel(logging.ERROR)
-        l_log.error("<E03: aproximação inexistente. aeronave:[{}/{}].".format(f_atv.i_trf_id, f_atv.s_trf_ind))
+        l_log.error(u"<E03: aproximação inexistente. aeronave:[{}/{}].".format(f_atv.i_trf_id, f_atv.s_trf_ind))
 
         # abort procedure
         abnd.abort_prc(f_atv)
 
         # return
         return
+
+    # variáveis locais
+    l_brk = None
 
     # fase de preparação dos dados para o procedimento ?
     if ldefs.E_FASE_ZERO == f_atv.en_atv_fase:
@@ -252,11 +210,11 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
         l_brk = f_atv.ptr_atv_brk = l_apx.lst_apx_brk[0]
 
         # breakpoint ok ?
-        if (l_brk is None) or not l_brk.v_brk_ok:
+        if (l_brk is None) or (not l_brk.v_brk_ok):
             # logger
             l_log = logging.getLogger("prc_aproximacao")
             l_log.setLevel(logging.ERROR)
-            l_log.error("<E04: fase zero. apx/breakpoint inexistente. aeronave:[{}/{}].".format(f_atv.i_trf_id, f_atv.s_trf_ind))
+            l_log.error(u"<E04: fase zero. apx/breakpoint inexistente. aeronave:[{}/{}].".format(f_atv.i_trf_id, f_atv.s_trf_ind))
 
             # abort procedure
             abnd.abort_prc(f_atv)
@@ -271,8 +229,6 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
     elif ldefs.E_FASE_DIRPONTO == f_atv.en_atv_fase:
         # interceptou o breakpoint ?
         if dp.prc_dir_ponto(f_atv, f_cine_data.f_coord_x_brk, f_cine_data.f_coord_y_brk, f_cine_data):
-            # abandona esta fase e passa à próxima fase
-
             # se não houver um procedimento associado, faz uma espera, senão executa o procedimento
             f_atv.en_atv_fase = ldefs.E_FASE_ESPERA if f_atv.ptr_atv_brk is not None else ldefs.E_FASE_ASSOCIADO
 
@@ -280,15 +236,11 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
     elif ldefs.E_FASE_RUMOALT == f_atv.en_atv_fase:
         # atingiu a proa e a altitude de demanda estabelecidas ?
         if (f_atv.f_trf_pro_atu == f_atv.f_atv_pro_dem) and (f_atv.f_trf_alt_atu == f_atv.f_atv_alt_dem):
-            # abandona esta fase e passa à próxima fase
-
             # se não houver um procedimento associado, faz uma espera, senão executa o procedimento
             f_atv.en_atv_fase = ldefs.E_FASE_ESPERA if f_atv.ptr_atv_brk is not None else ldefs.E_FASE_ASSOCIADO
 
     # fase de espera ? (mantém a aeronave em orbita até alcançar a altitude do breakpoint)
     elif ldefs.E_FASE_ESPERA == f_atv.en_atv_fase:
-        # verifica altitude para IAF(primeiro breakpoint)
-
         # dados do breakpoint
         l_brk = f_atv.ptr_atv_brk
         assert l_brk
@@ -328,7 +280,7 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
         if tass.trata_associado(f_atv, l_brk, f_cine_data.i_brk_ndx, f_stk_context):
             # é o último breakpoint da aproximação atual ?
             if f_atv.ptr_atv_brk == l_apx.lst_apx_brk[-1]:
-                pass # f_pStk.iCinPtr -= 1
+                f_cine_data.i_brk_ndx -= 1
 
     # já passou por todos os breakpoints ?
     elif ldefs.E_FASE_BREAKPOINT == f_atv.en_atv_fase:
@@ -338,7 +290,7 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
             if l_apx.ptr_apx_prc_ils is not None:
                 # ils ok ?
                 if __obtem_ils(f_atv, l_apx):
-                    # prepara para procedimento de ILS
+                    # coloca em procedimento de ILS
                     f_atv.en_trf_fnc_ope = ldefs.E_ILS
                     f_atv.en_atv_fase = ldefs.E_FASE_ZERO
 
@@ -356,12 +308,7 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
                 # está em condição de pouso ?
                 if (abs(f_atv.f_trf_alt_atu - l_brk.f_brk_alt) <= 0.01) and (abs(f_atv.f_trf_vel_atu - f_atv.ptr_trf_prf.f_prf_vel_apx) <= 0.01):
                     # pouso ok ?
-                    if __obtem_pouso(f_atv, l_apx):
-                        # prepara para procedimento de pouso
-                        f_atv.en_trf_fnc_ope = ldefs.E_POUSO
-
-                    # otherwise, pouso not ok...
-                    else:
+                    if not __obtem_pouso(f_atv, l_apx):
                         # coloca em manual
                         f_atv.en_trf_fnc_ope = ldefs.E_MANUAL
 
@@ -378,17 +325,10 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
                         # coloca em manual
                         f_atv.en_trf_fnc_ope = ldefs.E_MANUAL
 
-            # otherwise, NÃO pode fazer aproximação perdida...
+            # otherwise, NÃO pode fazer aproximação perdida nem ILS, faz pouso forçado...
             else:
-                # sem ILS e sem apxPerdida faz pouso forçado
-
                 # pouso ok ?
-                if __obtem_pouso(f_atv, l_apx):
-                    # prepara para procedimento de pouso
-                    f_atv.en_trf_fnc_ope = ldefs.E_POUSO
-
-                # otherwise, pouso not ok...
-                else:
+                if not __obtem_pouso(f_atv, l_apx):
                     # coloca em manual
                     f_atv.en_trf_fnc_ope = ldefs.E_MANUAL
 
@@ -401,16 +341,16 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
             l_brk = f_atv.ptr_atv_brk = l_apx.lst_apx_brk[f_cine_data.i_brk_ndx]
 
             # breakpoint ok ?
-            if (l_brk is None) or not l_brk.v_brk_ok:
+            if (l_brk is None) or (not l_brk.v_brk_ok):
                 # logger
                 l_log = logging.getLogger("prc_aproximacao")
                 l_log.setLevel(logging.ERROR)
-                l_log.error("<E05: fase breakpoint. apx/breakpoint inexistente. aeronave:[{}/{}].".format(f_atv.i_trf_id, f_atv.s_trf_ind))
+                l_log.error(u"<E05: fase breakpoint. apx/breakpoint inexistente. aeronave:[{}/{}].".format(f_atv.i_trf_id, f_atv.s_trf_ind))
 
                 # abort procedure
                 abnd.abort_prc(f_atv)
 
-                # return
+                # apx/breakpoint inexistente. cai fora...
                 return
 
             # obtém dados do breakpoint
@@ -422,8 +362,5 @@ def prc_aproximacao(f_atv, f_cine_data, f_stk_context):
         l_log = logging.getLogger("prc_aproximacao")
         l_log.setLevel(logging.ERROR)
         l_log.error(u"<E06: fase da aproximação não identificada. fase:[{}].".format(ldefs.DCT_FASE[f_atv.en_atv_fase]))
-
-    # logger
-    # M_LOG.info("prc_aproximacao:<<")
 
 # < the end >--------------------------------------------------------------------------------------

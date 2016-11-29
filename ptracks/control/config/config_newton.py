@@ -40,10 +40,10 @@ import argparse
 import os
 import socket
 
-# from ...model 
+# model
 import ptracks.model.data as data
 
-# from ...control.config 
+# control
 import ptracks.control.config.config_manager as config
 
 # < class CConfigNewton >--------------------------------------------------------------------------
