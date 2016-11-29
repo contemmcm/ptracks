@@ -43,7 +43,7 @@ from mpi4py import MPI
 
 # model
 import ptracks.model.glb_data as gdata
-import ptracks.smodel.glb_defs as gdefs
+import ptracks.model.glb_defs as gdefs
 
 import ptracks.model.model_newton as model
 
